@@ -71,3 +71,11 @@
         }
     }
 ```
+6. Header for INT_MAX and INT_MIN
+```cpp
+#include <climits>
+```
+
+7. substr() function in C++ STL
+✔ s.substr(s.size()) (or beyond) returns an empty string ("").
+✔ This behavior allows the recursion to recognize when s has been completely matched and update the answer properly. 🚀
