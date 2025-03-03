@@ -3,6 +3,7 @@
 #include <vector>
 #include <climits>
 #include <unordered_map>
+#include <sstream>
 using namespace std;
 
 // n - string size
@@ -23,8 +24,8 @@ void dfs(string s, vector<string> &words, int mini)
         return;
     }
 
-    if(memo.find(s) != memo.end() && memo[s] <= mini)
-    return;
+    if (memo.find(s) != memo.end() && memo[s] <= mini)
+        return;
 
     memo[s] = mini;
 
@@ -52,8 +53,28 @@ void dfs(string s, vector<string> &words, int mini)
 
 int main()
 {
-    string s = "applepie";
-    vector<string> words = {  "apple", "pie", "applepie"};
+    // string s = "applepie";
+    // vector<string> words = {  "apple", "pie", "applepie"};
+
+    // Taking input
+    string s;
+    getline(cin, s);
+
+    string input;
+    getline(cin, input);
+    for (char &c : input)
+    {
+        if (c == ',')
+            c = ' ';
+    }
+
+    stringstream ss(input);
+    string word;
+    vector<string> words;
+    while (ss >> word)
+    {
+        words.push_back(word);
+    }
 
     dfs(s, words, 0);
 

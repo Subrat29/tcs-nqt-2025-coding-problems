@@ -5,10 +5,36 @@
 #include <string>
 using namespace std;
 
+// string input = pine,apple,subrta,ankus month motu
+vector<string> parseInput()
+{
+    vector<string> words;
+    string line;
+    getline(cin, line); // Read entire input line
+
+    // Replace all commas with spaces
+    for (char &ch : line)
+    {
+        if (ch == ',')
+            ch = ' ';
+    }
+
+    // Use stringstream to extract words
+    stringstream ss(line);
+    string word;
+    while (ss >> word) // Read words separated by spaces
+    {
+        words.push_back(word);
+    }
+
+    return words;
+}
+
+// integer input = 1,2,3,4 5 6 7 8
 int main()
 {
-    string input;
     vector<int> v;
+    string input;
 
     // Read the entire line as input
     getline(cin, input);
