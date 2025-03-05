@@ -1,0 +1,24 @@
+int largestInteger(vector<int>& nums, int k) {  
+int n = nums.size();
+unordered_map<int, int>mp;
+for(int &i : nums){
+    mp[i]++;
+}
+
+int singleFreqLargestNum = -1, largestNum = -1;
+for(int &i : nums){
+    if(mp[i] == 1)
+        singleFreqLargestNum = max(singleFreqLargestNum, i);
+    largestNum = max(largestNum, i);
+}
+
+if(k==1)
+    return singleFreqLargestNum;
+else if(k==n)
+    return largestNum;
+if(mp[0] == 1)
+    largestNum = nums[0];
+if(mp[n-1] == 1)
+    largestNum = max(largestNum, nums[n-1]);
+return largestNum;
+}
