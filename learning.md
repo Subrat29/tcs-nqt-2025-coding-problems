@@ -79,3 +79,6 @@
 7. substr() function in C++ STL
 ✔ s.substr(s.size()) (or beyond) returns an empty string ("").
 ✔ This behavior allows the recursion to recognize when s has been completely matched and update the answer properly. 🚀
+
+8. empty() function in C++ STL
+✔ s.empty() returns true if the string is empty and false otherwise.
