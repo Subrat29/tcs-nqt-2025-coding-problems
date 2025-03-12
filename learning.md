@@ -82,3 +82,13 @@
 
 8. empty() function in C++ STL
 ✔ s.empty() returns true if the string is empty and false otherwise.
+
+9. Runtime error if you not initialize the vector with size but try to input elements in it using index.
+```cpp
+vector<int> v; // Runtime error
+vector<int> v(n); // No runtime error
+
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+```
